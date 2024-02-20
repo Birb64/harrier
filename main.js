@@ -1,3 +1,6 @@
+/*
+Creates the various visible entities throughout the experience
+*/
 let player = new Player();
 let bridge = new Bridge();
 let pillar = new Pillar();
@@ -5,7 +8,11 @@ let pillar2 = new Pillar2();
 
 let entities = [player, bridge, pillar, pillar2];
 
+/*
+
+*/
 let renderer;
+
 
 function assembleGraphics(){
     let initDEs = "";
