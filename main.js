@@ -291,7 +291,7 @@ let startT = t;
 
 let dt = 1/60;
 
-let speed = 10;
+let speed = 60;
 
 renderer.addUniform("playerZ", "float", 0);
 renderer.addUniform("deadTime", "float", 0);
@@ -304,8 +304,8 @@ function update(){
     t = now;
     renderer.setUni("t", t);
     speed += dt * 0.5;
-    if(speed > 30){
-        speed = 30;
+    if(speed > 60){
+        speed = 60;
     }
     if(!player.dead){
         camPos[0] += speed*dt;
