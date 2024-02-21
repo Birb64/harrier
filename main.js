@@ -9,25 +9,35 @@ let pillar2 = new Pillar2();
 let entities = [player, bridge, pillar, pillar2];
 
 /*
-
+Creates renderer variable
 */
 let renderer;
 
-
+/*
+assemle the graphics
+*/
 function assembleGraphics(){
     let initDEs = "";
     let deSum = "";
     let entityUnis = "";
+    /*
+    Insert the entities into the string variables
+    */
     for(let i of entities){
         initDEs += `\n${i.graphicsDE}\n`;
         deSum += `d = min(d, ${i.deIdentifier}(p - ${i.posUniName}));\n`;
         entityUnis += `uniform vec3 ${i.posUniName};`;
     }
-
+    /*
+    Define renderer
+    */
     renderer = new Renderer(
         `
             ${initDEs}
 
+            /*
+            I don't know what a bridgede is, but I'm going to assume this is the pillars, bridge, and player
+            */
             float de(vec3 p){
                 float d = 9999.;
                 d = min(d, bridgede(p));
@@ -42,7 +52,9 @@ function assembleGraphics(){
                 d = min(d, playerde(playerP));
                 return d;
             }
-
+            /*
+            perhaps a bloom to make the game look better?
+            */
             float bloomDE(vec3 p){
                 vec3 q = p - vec3(0., -8., 15.);
                 q = rotZ(q, 3.14159265/2.);
@@ -65,7 +77,10 @@ function assembleGraphics(){
 
         float bridgeDist = bridgede(p);
 
-        vec3 playerP = p - vec3(camPos.x + 15., 1.9 + 0.2*sin(2.*t), playerZ);
+        /*The player is set relative to the camera? This will be a pickle*/
+        
+        /*vec3 playerP = p - vec3(camPos.x + 15., 1.9 + 0.2*sin(2.*t), playerZ);*/
+        vec3 playerP = p - vec3(0., 1.9 + 0.2*sin(2.*t), playerZ);
         playerP = rotY(playerP, 3.1415926535 / 2.);
 
         if(playerde(playerP) < 0.002){
