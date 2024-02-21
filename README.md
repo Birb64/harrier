@@ -1,5 +1,5 @@
-# btstu
+# infiniharrier
 
-try to run it with chrome?? I haven't tried it with other browsers but i know it works on chrome on my mac.
+trying to make space harrier out of cartersemrad's btstu, check it out for yourself!
 
 https://cartersemrad.github.io/btstu/
