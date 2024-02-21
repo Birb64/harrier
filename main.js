@@ -284,7 +284,7 @@ function assembleGraphics(){
 
 assembleGraphics();
 
-let camPos = [0,7,10];
+let camPos = [0,7,0];
 
 let t = performance.now() / 1000;
 let startT = t;
