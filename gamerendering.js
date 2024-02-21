@@ -302,7 +302,7 @@ function Renderer(de, colors, otherfunctions, uniforms){
         this.addUniform("res", "vec2", [this.canvas.width, this.canvas.height]);
         this.addUniform("camPos", "vec3", [0,7,0]);
         /*this.addUniform("camAngle", "vec2", [Math.PI*5/8,-0.2*Math.PI/2]);*/
-        this.addUniform("camAngle", "vec2", [Math.PI*5/8,Math.PI/2]);
+        this.addUniform("camAngle", "vec2", [Math.PI/2,-0.2*Math.PI/2]);
         this.addUniform("t", "float", 0);
         this.addUniform("objectPos", "vec3", [0,0,0]);
         this.addUniform("objectAngle", "vec2", [0,0]);
