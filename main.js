@@ -79,8 +79,8 @@ function assembleGraphics(){
 
         /*The player is set relative to the camera? This will be a pickle*/
         
-        /*vec3 playerP = p - vec3(camPos.x + 15., 1.9 + 0.2*sin(2.*t), playerZ);*/
-        vec3 playerP = p - vec3(0., 1.9 + 0.2*sin(2.*t), playerZ);
+        vec3 playerP = p - vec3(camPos.x + 15., 1.9 + 0.2*sin(2.*t), playerZ);
+        /*vec3 playerP = p - vec3(0., 1.9 + 0.2*sin(2.*t), playerZ);*/
         playerP = rotY(playerP, 3.1415926535 / 2.);
 
         if(playerde(playerP) < 0.002){
